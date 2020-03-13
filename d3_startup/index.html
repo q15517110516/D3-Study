@@ -17,7 +17,9 @@
             .data(dataset) // Count and parse data values. Our data set have 5 values, so the code passed here will be executed 5 times, corresponding to 5 values.
             .enter() // To generate new data-bound elements, you must use the 'enter()' method. This method compares the number of DOM elements with the data to be processed. If there are more data values than the corresponding DOM element, the 'enter()' method generates new placeholder elements and performs the remaining operations on each placeholder element. Each placeholder element is passed to the next method in the chain.
             .append("p") // Create a new "p" element and add it to the end of our selected element, exactly inserted at the end of the "body" tag, just before the </body>
-            .text("New Paragraph!");
+            .text(function(d) {
+                return d;
+            });
     </script>
 </body>
 
