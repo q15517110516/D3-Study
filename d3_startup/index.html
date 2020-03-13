@@ -6,21 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D3 Test</title>
     <script type="text/javascript" src="https://d3js.org/d3.v5.js"></script>
+
 </head>
+
+<style>
+    div.bar {
+        display: inline-block;
+        width: 20px;
+        height: 75px;
+        background-color: teal;
+        margin-right: 2px;
+    }
+</style>
 
 <body>
     <script type="text/javascript">
-        var dataset = [5, 10, 15, 20, 25];
+        var dataset = []; // Initialize empty array
+        for (var i = 0; i < 25; i++) { // Loop 25 times
+            var newNumber = Math.round(Math.random() * 30); // New random number (0-30)
+            dataset.push(newNumber); // Add new number to array
+        }
         // Chain Syntax(链式语法)
         d3.select("body") // Call D3 "select" method, which uses CSS selector to select an element from the DOM ("body")
-            .selectAll("p") // Select all paragraphs in the DOM. Because there are no paragraphs at all, it returns an empty selection. Correspond this empty selection to many paragraphs that "will appear"
+            .selectAll("div") // Select all paragraphs in the DOM. Because there are no paragraphs at all, it returns an empty selection. Correspond this empty selection to many paragraphs that "will appear"
             .data(dataset) // Count and parse data values. Our data set have 5 values, so the code passed here will be executed 5 times, corresponding to 5 values.
             .enter() // To generate new data-bound elements, you must use the 'enter()' method. This method compares the number of DOM elements with the data to be processed. If there are more data values than the corresponding DOM element, the 'enter()' method generates new placeholder elements and performs the remaining operations on each placeholder element. Each placeholder element is passed to the next method in the chain.
-            .append("p") // Create a new "p" element and add it to the end of our selected element, exactly inserted at the end of the "body" tag, just before the </body>
-            .text(function(d) {
-                return d;
+            .append("div") // Create a new "p" element and add it to the end of our selected element, exactly inserted at the end of the "body" tag, just before the </body>
+            .attr("class", "bar") // 'attr()' is used to set the HTML attribute and its value on the element
+            .style("height", function(d) { // The 'style()' method is used to apply CSS attributes and values directly to HTML elements. This method is equivalent to writing the CSS rules in the style directly into the HTML element 
+                var barHeight = d * 5; // Scale up by factor of 5
+                return barHeight + "px";
             });
+        // .style("color", function(d) {
+        //     if (d > 15) {
+        //         return "red";
+        //     } else {
+        //         return "black";
+        //     }
+        // })
+        // .text(function(d) {
+        //     return d;
+        // });
     </script>
+
+
 </body>
 
 </html>
