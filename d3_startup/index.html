@@ -17,6 +17,12 @@
         background-color: teal;
         margin-right: 2px;
     }
+    
+    svg.pumpkin {
+        fill: yellow;
+        stroke: orange;
+        stroke-width: 5;
+    }
 </style>
 
 <body>
@@ -48,6 +54,31 @@
         //     return d;
         // });
     </script>
+    <!-- draw a rectangular -->
+    <svg width="500" height="50">
+        <rect x="0" y="0" width="500" height="50"></rect> 
+    </svg>
+
+    <!-- draw a circle -->
+    <svg width="500" height="60">
+        <circle cx="150" cy="30" r="25" fill="yellow" stroke="orange" stroke-width="5"></circle>
+        <circle cx="300" cy="30" r="25" class="pumpkin"></circle>
+    </svg>
+
+    <!-- draw a ellipse -->
+    <svg width="500" height="50">
+        <ellipse cx="250" cy="25" rx="100" ry="25"></ellipse>
+    </svg>
+
+    <!-- draw a line -->
+    <svg width="500" height="50">
+        <line x1="0" y1="0" x2="500" y2="50" stroke="black"></line> 
+    </svg>
+
+    <!-- text -->
+    <svg width="500" height="50">
+        <text x="250" y="25" font-family="sans-serif" font-size="25" fill="grey">Easy-peasy</text> 
+    </svg>
 
 
 </body>
