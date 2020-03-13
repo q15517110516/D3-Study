@@ -29,7 +29,7 @@
         // Chain Syntax(链式语法)
         d3.select("body") // Call D3 "select" method, which uses CSS selector to select an element from the DOM ("body")
             .selectAll("div") // Select all paragraphs in the DOM. Because there are no paragraphs at all, it returns an empty selection. Correspond this empty selection to many paragraphs that "will appear"
-            .data(dataset) // Count and parse data values. Our data set have 5 values, so the code passed here will be executed 5 times, corresponding to 5 values.
+            .data(dataset) // Count and parse data values. Our data set have 5 values, so the code passed here will be executed 5 times, corresponding to 5 values
             .enter() // To generate new data-bound elements, you must use the 'enter()' method. This method compares the number of DOM elements with the data to be processed. If there are more data values than the corresponding DOM element, the 'enter()' method generates new placeholder elements and performs the remaining operations on each placeholder element. Each placeholder element is passed to the next method in the chain.
             .append("div") // Create a new "p" element and add it to the end of our selected element, exactly inserted at the end of the "body" tag, just before the </body>
             .attr("class", "bar") // 'attr()' is used to set the HTML attribute and its value on the element
