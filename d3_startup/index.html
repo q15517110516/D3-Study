@@ -27,12 +27,12 @@
 
 <body>
     <script type="text/javascript">
+        // Draw a hisogram
         var dataset = []; // Initialize empty array
         for (var i = 0; i < 25; i++) { // Loop 25 times
             var newNumber = Math.round(Math.random() * 30); // New random number (0-30)
             dataset.push(newNumber); // Add new number to array
         }
-        // Chain Syntax(链式语法)
         d3.select("body") // Call D3 "select" method, which uses CSS selector to select an element from the DOM ("body")
             .selectAll("div") // Select all paragraphs in the DOM. Because there are no paragraphs at all, it returns an empty selection. Correspond this empty selection to many paragraphs that "will appear"
             .data(dataset) // Count and parse data values. Our data set have 5 values, so the code passed here will be executed 5 times, corresponding to 5 values
@@ -54,7 +54,7 @@
         //     return d;
         // });
 
-        // examples of how to draw circles using SVG along with ".attr()"
+        // Examples of how to draw circles using SVG along with ".attr()"
         var w = 500;
         var h = 100;
         var dataset1 = [5, 10, 15, 20, 25];
@@ -82,6 +82,8 @@
                 return d / 2;
             });
     </script>
+
+
     <!-- draw a rectangular -->
     <svg width="500" height="50">
         <rect x="0" y="0" width="500" height="50"></rect> 
